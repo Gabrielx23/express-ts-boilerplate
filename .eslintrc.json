@@ -1,0 +1,81 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "semi": [
+            "error",
+            "always"
+        ],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "prefer-const": "error",
+        "prefer-arrow-callback": "error",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "args": "none"
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "function"
+            },
+            {
+                "blankLine": "always",
+                "prev": [
+                    "if",
+                    "function",
+                    "for",
+                    "while",
+                    "switch",
+                    "try"
+                ],
+                "next": "*"
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    [
+                        "builtin",
+                        "external"
+                    ],
+                    "internal",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "import/no-unresolved": "off"
+    }
+}
